@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media screen and (min-width:992px) {
+            .col-1 {
+                width: 8.33%;
+            }
+
+            .col-2 {
+                width: 16.66%;
+            }
+
+            .col-3 {
+                width: 25%;
+            }
+
+            .col-4 {
+                width: 33.33%;
+            }
+
+            .col-5 {
+                width: 41.66%;
+            }
+
+            .col-6 {
+                width: 50%;
+            }
+
+            .col-7 {
+                width: 58.33%;
+            }
+
+            .col-8 {
+                width: 66.66%;
+            }
+
+            .col-9 {
+                width: 75%;
+            }
+
+            .col-10 {
+                width: 83.33%;
+            }
+
+            .col-11 {
+                width: 91.66%;
+            }
+
+            .col-12 {
+                width: 100%;
+            }
+        }
+
+        [class*="col-"] {
+            width: 100%;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+        .row {
+            width: 100%;
+        }
+
+        .row::after {
+            content: '';
+            clear: both;
+            display: block;
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+            /*background-color: #db1010;*/
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        header {
+            background-color: darkgray;
+            padding: 1% 1%;
+            text-align: center;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 100px;
+
+            text-align: center;
+            border: 2px solid rgb(5, 5, 5);
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        nav ul li {
+            display: block;
+        }
+
+        nav ul li a {
+            display: block;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            line-height: 70px;
+            padding: 0 20px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            transition: .4s;
+        }
+
+        nav ul li a:hover {
+            background-color: blanchedalmond;
+            border-radius: 20px;
+        }
+
+        main {
+            padding: 1% 0%;
+            background-color: rgb(57, 3, 55);
+        }
+
+        #banner-section {
+            background-image: url(mario--s27nY8mZUE-unsplash.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .banner-content {
+            padding: 50px 10px;
+            text-align: center;
+        }
+
+        .banner-content h1 {
+            width: 100%;
+            margin: 15px auto;
+            font-size: 3rem;
+            background-color: rgba(181, 181, 90, 0.884);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .banner-content p {
+            font-size: 1.5rem;
+            background-color: rgb(207, 238, 7);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        .btn {
+            width: 150px;
+            padding: 20px;
+            margin-top: 30px;
+            height: 60px;
+            text-transform: uppercase;
+            transition: .1s;
+            border-radius: 20px;
+            border: 2px solid black;
+        }
+
+        .btn:hover {
+            background-color: rgb(231, 143, 12);
+            transform: scale(1.2);
+            box-shadow: 0 4px 10px 10px rgb(244, 239, 239);
+        }
+
+        #about-us {
+            padding: 1% 3%;
+        }
+
+        .about-us-content h2 {
+            text-align: center;
+            margin: 10px auto;
+            font-weight: bolder;
+            font-size: 2rem;
+            color: beige;
+        }
+
+        .about-us-content p {
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: beige;
+        }
+
+        .menu-section {
+            padding: 1%;
+        }
+
+        .card-body {
+            text-align: center;
+        }
+
+        .card-body img {
+
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .item-desc {
+            background-color: cadetblue;
+        }
+
+        .item-desc h3 {
+            background-color: rgb(162, 145, 125);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .item-desc>p {
+            font-size: 1.3em;
+            padding: 10px;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            padding: 1% 0%;
+            background-color: rgb(57, 3, 55);
+        }
+
+        #contact {
+            padding: 1% 0%;
+            background-color: rgb(57, 3, 55);
+
+        }
+
+        .map {
+            width: 100%;
+            height: 250px;
+        }
+
+        .contact-details {
+            text-align: center;
+            background-color: blanchedalmond;
+            padding: 3% 5%;
+            border-radius: 15px;
+        }
+
+        .contact-details h3 {
+            color: brown;
+            font-size: 1.2rem;
+        }
+
+        .contact-details h5 {
+            font-size: 1.2rem;
+        }
+
+        .contact-details p {
+            font-size: 1rem;
+        }
+
+        .credit {
+            text-align: center;
+            font-size: 1.3rem;
+            background-color: rgb(242, 235, 235);
+            padding: 2%;
+            border-radius: 15px;
+        }
+
+        .phone {
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-4">
+                    <div class="logo">
+
+                        <img src="hamburger.png" alt="icon">
+
+                    </div>
+                </div>
+                <div class="food-menu col-8">
+                    <nav>
+                        <ul>
+                            <li><a href="#banner-section">home</a></li>
+                            <li><a href="#about-us">about us</a></li>
+                            <li><a href="#menu-section">food menu</a></li>
+                            <li><a href="#contact-details-id">contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+        </header>
+        <main>
+            <section id="banner-section">
+                <div class="banner-content">
+                    <h1>BunHub<br>Restaurant</h1>
+                    <p>20% discount only for you</p>
+                    <button class="btn">Order Now</button>
+                </div>
+            </section>
+            <section id="about-us">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="about-us-content">
+                            <h2>About Us</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint a tempore tenetur
+                                    commodi
+                                    quasi nam explicabo rerum, deserunt qui, id reprehenderit, odio enim iusto aliquid
+                                    eveniet officiis praesentium quidem? Assumenda reiciendis minima fuga exercitationem
+                                    illum deserunt eius beatae. Quaerat magnam harum modi quas architecto voluptas
+                                    voluptatem nesciunt! Voluptas, itaque dolorem.
+                                </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="menu-section">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="likemeat-v6KsaQtqINc-unsplash.jpg" alt="chicken-burg">
+                            </div>
+                            <div class="item-desc">
+                                <h3>Chicken Burger</h3>
+                                <p>Rating:4/5</p>
+                                <p>Price:300 Taka</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="ryan-concepcion-14L8fUX0GY4-unsplash (2).jpg" alt="beef-burg">
+                            </div>
+                            <div class="item-desc">
+                                <h3>Beef Burger</h3>
+                                <p>Rating:4.5/5</p>
+                                <p>Price:400 Taka</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="amirali-mirhashemian-Tht2Sdwqey8-unsplash.jpg" alt="chicken-burg">
+                            </div>
+                            <div class="item-desc">
+                                <h3>Sausage Burger</h3>
+                                <p>Rating:4/5</p>
+                                <p>Price:300 Taka</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="amirali-mirhashemian-88YAXjnpvrM-unsplash.jpg" alt="cheese-burg">
+                            </div>
+                            <div class="item-desc">
+                                <h3>Student Burger</h3>
+                                <p>Rating:4/5</p>
+                                <p>Price:200 Taka</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact">
+                <div class="row">
+                    <div class="col-8">
+                        <iframe class="map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.536016389646!2d88.92700947519245!3d23.906066278564484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39feb07cc0000001%3A0x9470e3b4fdab4be4!2sAmla%20Bazar!5e0!3m2!1sen!2sbd!4v1719552763895!5m2!1sen!2sbd"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="contact-details" id="contact-details-id">
+                        <h3>Contact Details</h3>
+                        <div>
+                            <h5>BunHub Restaurant</h5>
+                            <address>
+                                Amla Bazar,Mirpur
+                                Kushtia
+                            </address>
+                            <br>
+                        </div>
+                        <div class="phone">
+                            <h5>Phone:</h5>
+                            <p>01787931039</p>
+                        </div>
+                        <div>
+                            <h5>Opening hours:</h5>
+                            <p>
+                                Sunday to Friday <br> 3PM-9PM
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="row">
+                <div class="col-6">
+                    <p class="credit">
+                        &copy;All rights reserved by BunHub Restaurant
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
